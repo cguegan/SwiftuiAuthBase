@@ -16,6 +16,7 @@
 		EF0282652C3EF12100B5FB4F /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0282642C3EF12100B5FB4F /* RegistrationView.swift */; };
 		EF0282672C3EF5A100B5FB4F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0282662C3EF5A100B5FB4F /* ProfileView.swift */; };
 		EF0282692C3EF7C300B5FB4F /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0282682C3EF7C300B5FB4F /* SettingsRowView.swift */; };
+		EF02826B2C3EFC8000B5FB4F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF02826A2C3EFC8000B5FB4F /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		EF0282642C3EF12100B5FB4F /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		EF0282662C3EF5A100B5FB4F /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		EF0282682C3EF7C300B5FB4F /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
+		EF02826A2C3EFC8000B5FB4F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		EF02825A2C3EE85800B5FB4F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EF02826A2C3EFC8000B5FB4F /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				EF0282612C3EE96500B5FB4F /* LoginView.swift in Sources */,
 				EF02824E2C3EE7DA00B5FB4F /* ContentView.swift in Sources */,
 				EF02824C2C3EE7DA00B5FB4F /* SwiftuiAuthBaseApp.swift in Sources */,
+				EF02826B2C3EFC8000B5FB4F /* User.swift in Sources */,
 				EF0282672C3EF5A100B5FB4F /* ProfileView.swift in Sources */,
 				EF0282652C3EF12100B5FB4F /* RegistrationView.swift in Sources */,
 				EF0282692C3EF7C300B5FB4F /* SettingsRowView.swift in Sources */,

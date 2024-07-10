@@ -12,7 +12,8 @@ struct ProfileView: View {
         List {
             Section {
                 HStack {
-                    Text("MJ")
+                    // Picture
+                    Text(User.sample.initials)
                         .font(.title)
                         .fontWeight(.semibold)
                         .foregroundStyle(.white)
@@ -21,12 +22,14 @@ struct ProfileView: View {
                         .clipShape(Circle())
                     
                     VStack(alignment: .leading, spacing: 4) {
-                        Text("Michael Jordan")
+                        // Name
+                        Text(User.sample.fullName)
                             .font(.subheadline)
                             .fontWeight(.semibold)
                             .padding(.top, 4)
                         
-                        Text("test@gmail.com")
+                        // Email
+                        Text(User.sample.email)
                             .font(.footnote)
                             .accentColor(.gray)
                     }
