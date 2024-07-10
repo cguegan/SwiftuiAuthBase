@@ -17,6 +17,7 @@
 		EF0282672C3EF5A100B5FB4F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0282662C3EF5A100B5FB4F /* ProfileView.swift */; };
 		EF0282692C3EF7C300B5FB4F /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0282682C3EF7C300B5FB4F /* SettingsRowView.swift */; };
 		EF02826B2C3EFC8000B5FB4F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF02826A2C3EFC8000B5FB4F /* User.swift */; };
+		EF02826D2C3EFFD200B5FB4F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EF02826C2C3EFFD200B5FB4F /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		EF0282662C3EF5A100B5FB4F /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		EF0282682C3EF7C300B5FB4F /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 		EF02826A2C3EFC8000B5FB4F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		EF02826C2C3EFFD200B5FB4F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,7 @@
 		EF02823F2C3EE7DA00B5FB4F = {
 			isa = PBXGroup;
 			children = (
+				EF02826C2C3EFFD200B5FB4F /* README.md */,
 				EF02824A2C3EE7DA00B5FB4F /* SwiftuiAuthBase */,
 				EF0282492C3EE7DA00B5FB4F /* Products */,
 			);
@@ -199,6 +202,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF02826D2C3EFFD200B5FB4F /* README.md in Resources */,
 				EF0282532C3EE7DB00B5FB4F /* Preview Assets.xcassets in Resources */,
 				EF0282502C3EE7DB00B5FB4F /* Assets.xcassets in Resources */,
 			);
