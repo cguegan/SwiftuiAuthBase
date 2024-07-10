@@ -10,6 +10,7 @@ import SwiftUI
 struct RegistrationView: View {
     
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var viewModel: AuthViewModel
     
     @State private var email: String = ""
     @State private var fullName: String = ""
@@ -46,19 +47,31 @@ struct RegistrationView: View {
                 )
                 .autocapitalization(.none)
                 
-                ImputView( text: $confirmPassword,
-                           title: "Confirm Password",
-                           placeholder: "Confirm your password",
-                           isSecuredField: true
-                )
-                .autocapitalization(.none)
+                ZStack(alignment: .trailing) {
+                    ImputView( text: $confirmPassword,
+                               title: "Confirm Password",
+                               placeholder: "Confirm your password",
+                               isSecuredField: true
+                    )
+                    .autocapitalization(.none)
+                    
+                    if !password.isEmpty
+                        && password == confirmPassword {
+                        Image(systemName: "checkmark")
+                            .foregroundColor(.green)
+                    }
+                }
             }
             .padding(.horizontal)
             .padding(.top, 12)
             
             // Sign up Button
             Button {
-                print("Sign user Up")
+                Task {
+                    try await viewModel.createUser( withEmail: email,
+                                                    password: password,
+                                                    fullName: fullName )
+                }
             } label: {
                 HStack {
                     Text("SIGN UP").fontWeight(.semibold)
@@ -68,6 +81,8 @@ struct RegistrationView: View {
                             height: 48)
             }
             .background(Color(.systemBlue))
+            .disabled(!formIsValid)
+            .opacity(formIsValid ? 1.0 : 0.5)
             .cornerRadius(10)
             .padding(.top, 24)
             
@@ -88,6 +103,19 @@ struct RegistrationView: View {
     }
 }
 
+extension RegistrationView: AuthenticationFormProtocol {
+    var formIsValid: Bool {
+        return !email.isEmpty
+        && email.contains("@")
+        && !password.isEmpty
+        && password.count > 5
+        && password == confirmPassword
+        && !fullName.isEmpty
+        && fullName.components(separatedBy: " ").count > 1
+    }
+}
+
 #Preview {
     RegistrationView()
+        .environmentObject(AuthViewModel())
 }
