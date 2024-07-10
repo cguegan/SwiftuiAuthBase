@@ -15,12 +15,14 @@ struct LoginView: View {
     var body: some View {
         NavigationStack {
             VStack {
+                
                 // Image
                 Image("Corail")
                     .resizable()
                     .scaledToFill()
                     .frame(width: 150, height: 150, alignment: .center)
                     .padding(.vertical, 32)
+                
                 
                 // Form fields
                 VStack(spacing: 24) {
@@ -41,6 +43,21 @@ struct LoginView: View {
                 .padding(.top, 12)
                 
                 
+                // Forgot password
+                // Sign up button
+                NavigationLink {
+                    //TODO: Implement forgot password
+                    Text("TODO: Implement forgot password")
+                } label: {
+                    HStack(spacing: 4) {
+                        Text("Forgot your password?")
+                            .font(.caption)
+                    }
+                }
+                .padding(.top)
+                .frame( width: UIScreen.main.bounds.width - 32,
+                        alignment: .trailing)
+                
                 // Sign in Button
                 Button {
                     print("Log user In")
@@ -49,26 +66,17 @@ struct LoginView: View {
                         Text("SIGN IN")
                             .fontWeight(.semibold)
                         Image(systemName: "arrow.right")
-                    }.foregroundColor(.white)
-                        .frame( width: UIScreen.main.bounds.width - 32,
-                                height: 48)
+                    }
+                    .foregroundColor(.white)
+                    .frame( width: UIScreen.main.bounds.width - 32,
+                            height: 48)
                 }
                 .background(Color(.systemBlue))
                 .cornerRadius(10)
                 .padding(.top, 24)
                 
-                // Sign up button
-                NavigationLink {
-                    //TODO: Implement forgot password
-                    Text("TODO: Implement forgot password")
-                } label: {
-                    HStack(spacing: 4) {
-                        Text("Forgot your password?")
-                            .bold()
-                    }
-                }
-                
                 Spacer()
+                
                 
                 // Sign up button
                 NavigationLink {
