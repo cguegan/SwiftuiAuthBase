@@ -8,11 +8,9 @@
 import SwiftUI
 
 struct ProfileView: View {
-    
-    @EnvironmentObject var viewModel: AuthViewModel
-    
+        
     var body: some View {
-        if let user = viewModel.currentUser {
+        if let user = AuthService.shared.currentUser {
             List {
                 Section {
                     HStack {
@@ -54,7 +52,7 @@ struct ProfileView: View {
                 Section("Account") {
                     
                     Button {
-                        viewModel.signOut()
+                        AuthService.shared.signOut()
                     } label: {
                         SettingsRowView(
                             imageName: "arrow.left.circle.fill",
@@ -81,5 +79,4 @@ struct ProfileView: View {
 
 #Preview {
     ProfileView()
-        .environmentObject(AuthViewModel())
 }

@@ -1,31 +1,37 @@
 //
-//  AuthViewModel.swift
+//  AuthService.swift
 //  SwiftuiAuthBase
 //
-//  Created by Christophe Guégan on 10/07/2024.
+//  Created by Christophe Guégan on 11/07/2024.
 //
 
 import Foundation
 import Firebase
-import FirebaseAuth
-import FirebaseFirestoreSwift
+import FirebaseFirestore
 
-protocol AuthenticationFormProtocol {
-    var formIsValid: Bool { get }
-}
-
-@MainActor
-class AuthViewModel: ObservableObject {
+@Observable
+final class AuthService {
     
-    @Published var userSession: FirebaseAuth.User?
-    @Published var currentUser: User?
+    var userSession: FirebaseAuth.User?
+    var currentUser: User?
     
-    init() {
+    static let shared = AuthService()
+    
+    /// Private init
+    /// Not Accessible from outstide because of the singleton pattern used here
+    
+    private init() {
         self.userSession = Auth.auth().currentUser
         Task {
             await fetchUser()
         }
     }
+    
+    /// Sign In
+    /// 
+    /// - Parameters:
+    ///   - email: String - Email address of the new user
+    ///   - password: String - Chosen password   
     
     func signIn(withEmail email: String, password: String) async throws {
         print("DEBUG: Sign in ...")
@@ -37,6 +43,13 @@ class AuthViewModel: ObservableObject {
             print("ERROR: failed to login the user with error: \(error.localizedDescription)")
         }
     }
+    
+    /// Create User
+    /// 
+    /// - Parameters:
+    ///   - email: String - Email address of the new user
+    ///   - password: String - Chosen password
+    ///   - fullName: String - Full name of the new user
     
     func createUser(withEmail email: String, password: String, fullName: String) async throws {
         print("DEBUG: create user ...")
@@ -54,6 +67,9 @@ class AuthViewModel: ObservableObject {
         }
     }
     
+    /// Sign Out
+    ///
+    
     func signOut() {
         print("DEBUG: Sign out ...")
         do {
@@ -65,9 +81,15 @@ class AuthViewModel: ObservableObject {
         }
     }
     
+    /// Delete account
+    ///
+    
     func deleteAccount() {
         print("DEBUG: Delete Account ...")
     }
+    
+    /// Fetch user
+    ///
     
     func fetchUser() async {
         print("DEBUG: Fetch user ...")
@@ -82,9 +104,16 @@ class AuthViewModel: ObservableObject {
         }
     }
     
+    /// Forgot Password
+    ///
+    
     func forgotPassword() async {
         print("DEBUG: Forgot password ...")
     }
     
+    /// Change Password
+    ///
+    
     func changePassword() async {}
+    
 }

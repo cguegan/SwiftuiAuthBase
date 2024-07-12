@@ -26,7 +26,9 @@
 		EF02827A2C3F1CFC00B5FB4F /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = EF0282792C3F1CFC00B5FB4F /* FirebaseRemoteConfig */; };
 		EF02827C2C3F1CFC00B5FB4F /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = EF02827B2C3F1CFC00B5FB4F /* FirebaseRemoteConfigSwift */; };
 		EF02827E2C3F1CFC00B5FB4F /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = EF02827D2C3F1CFC00B5FB4F /* FirebaseStorage */; };
-		EF0282822C3F1EB500B5FB4F /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0282812C3F1EB500B5FB4F /* AuthViewModel.swift */; };
+		EF03BF3E2C40364300CC4487 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF03BF3D2C40364300CC4487 /* AuthService.swift */; };
+		EF03BF402C40367A00CC4487 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF03BF3F2C40367A00CC4487 /* LoginViewModel.swift */; };
+		EF03BF422C40384600CC4487 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF03BF412C40384600CC4487 /* RegistrationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +45,9 @@
 		EF02826A2C3EFC8000B5FB4F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		EF02826C2C3EFFD200B5FB4F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EF02826E2C3F1C1500B5FB4F /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		EF0282812C3F1EB500B5FB4F /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		EF03BF3D2C40364300CC4487 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		EF03BF3F2C40367A00CC4487 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		EF03BF412C40384600CC4487 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,9 +135,9 @@
 		EF02825C2C3EE86100B5FB4F /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				EF0282592C3EE85500B5FB4F /* Root */,
 				EF02825E2C3EE91100B5FB4F /* Authentication */,
 				EF02825F2C3EE92200B5FB4F /* Profile */,
-				EF0282592C3EE85500B5FB4F /* Root */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -151,6 +155,7 @@
 			children = (
 				EF0282802C3F1E9300B5FB4F /* Views */,
 				EF02827F2C3F1E8000B5FB4F /* ViewModels */,
+				EF03BF3C2C40361500CC4487 /* Service */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -166,7 +171,8 @@
 		EF02827F2C3F1E8000B5FB4F /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				EF0282812C3F1EB500B5FB4F /* AuthViewModel.swift */,
+				EF03BF3F2C40367A00CC4487 /* LoginViewModel.swift */,
+				EF03BF412C40384600CC4487 /* RegistrationViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -178,6 +184,14 @@
 				EF0282642C3EF12100B5FB4F /* RegistrationView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		EF03BF3C2C40361500CC4487 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				EF03BF3D2C40364300CC4487 /* AuthService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,14 +279,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF0282632C3EEB6100B5FB4F /* ImputView.swift in Sources */,
+				EF03BF422C40384600CC4487 /* RegistrationViewModel.swift in Sources */,
 				EF0282612C3EE96500B5FB4F /* LoginView.swift in Sources */,
+				EF03BF402C40367A00CC4487 /* LoginViewModel.swift in Sources */,
 				EF02824E2C3EE7DA00B5FB4F /* ContentView.swift in Sources */,
 				EF02824C2C3EE7DA00B5FB4F /* SwiftuiAuthBaseApp.swift in Sources */,
 				EF02826B2C3EFC8000B5FB4F /* User.swift in Sources */,
 				EF0282672C3EF5A100B5FB4F /* ProfileView.swift in Sources */,
 				EF0282652C3EF12100B5FB4F /* RegistrationView.swift in Sources */,
+				EF03BF3E2C40364300CC4487 /* AuthService.swift in Sources */,
 				EF0282692C3EF7C300B5FB4F /* SettingsRowView.swift in Sources */,
-				EF0282822C3F1EB500B5FB4F /* AuthViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +430,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -443,6 +460,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

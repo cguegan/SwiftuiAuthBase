@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    @EnvironmentObject var viewModel: AuthViewModel
-    
+        
+    // MARK: - Main View
+    // —————————————————
     var body: some View {
         Group {
-            if viewModel.userSession != nil {
+            if AuthService.shared.userSession != nil {
                 ProfileView()
             } else {
                 LoginView()
@@ -22,7 +22,10 @@ struct ContentView: View {
     }
 }
 
+
+// MARK: - Preview
+// ———————————————
+
 #Preview {
     ContentView()
-        .environmentObject(AuthViewModel())
 }

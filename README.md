@@ -1,16 +1,29 @@
 # SwiftuiAuthBase
 
-Following the tutorial from AppStuff
-
-https://www.youtube.com/watch?v=QJHmhLGv-_0&t=2580s
+Following the tutorials:
+    - https://www.youtube.com/watch?v=QJHmhLGv-_0&t=2580s
+    - https://www.youtube.com/watch?v=06coOG-Mt8E&t=12s
 
 
 MVP
 ---
-- [x] Login/Registration Sceen
-- [x] AuthViewModel
-- [ ] Auth redirection
-- [ ] Fix Preview bug
-- [ ] Load user picture
+- [x] Observation Firebase Pattern
+- [x] Login Screen
+- [x] Registration Screen
+- [x] Login View Model
+- [x] Registration View Model
+- [x] AuthService
+    - [x] Create User
+    - [x] Sign In User
+    - [x] Sign Out User
+    - [x] Fetch User
+    - [ ] Delete User
+    - [ ] Forgot Password
+    - [ ] Change Password
+- [x] Auth redirection in root view
+- [x] Fix Preview bug
 - [ ] Forgot Password
 - [ ] Change Password
+- [ ] Delete account
+- [ ] Validate email
+- [ ] Upload/Load user picture
