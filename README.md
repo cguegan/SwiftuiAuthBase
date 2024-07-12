@@ -18,7 +18,7 @@ MVP
     - [x] Sign Out User
     - [x] Fetch User
     - [ ] Delete User
-    - [ ] Forgot Password
+    - [x] Forgot/Reset Password
     - [ ] Change Password
 - [x] Auth redirection in root view
 - [x] Fix Preview bug

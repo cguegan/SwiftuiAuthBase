@@ -11,6 +11,7 @@ struct LoginView: View {
     
     @State private var viewModel = LoginViewModel()
     
+    
     // MARK: - Main View
     // —————————————————
     var body: some View {
@@ -25,6 +26,10 @@ struct LoginView: View {
                 signInButton
                 Spacer()
                 signUpButton
+            }
+            .sheet(isPresented: $viewModel.showResetPasswordSheet) {
+                ResetPasswordView(viewModel: viewModel)
+                    .presentationDetents([.medium])
             }
         }
     }
@@ -73,9 +78,8 @@ extension LoginView {
     
     // Forgot Password
     var forgotPasswordButton: some View {
-        NavigationLink {
-            //TODO: Implement forgot password
-            Text("TODO: Implement forgot password")
+        Button {
+            viewModel.showResetPasswordSheet.toggle()
         } label: {
             HStack(spacing: 4) {
                 Text("Forgot your password?")
@@ -93,7 +97,7 @@ extension LoginView {
             viewModel.signIn()
         } label: {
             HStack {
-                Text("SIGN IN")
+                Text("Sign In")
                     .fontWeight(.semibold)
                 Image(systemName: "arrow.right")
             }

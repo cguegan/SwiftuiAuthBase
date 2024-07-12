@@ -12,6 +12,26 @@ class LoginViewModel {
     
     var email: String = ""
     var password: String = ""
+    var resetPasswordEmail: String = ""
+    var showResetPasswordSheet: Bool = false
+    
+    /// Validate the form elements
+    ///
+    
+    var formIsValid: Bool {
+        return !email.isEmpty
+        && email.contains("@")
+        && !password.isEmpty
+        && password.count > 5
+    }
+    
+    /// Validate the form elements
+    ///
+    
+    var emailIsValid: Bool {
+        //TODO: Check if email is valid
+        return true
+    }
     
     /// Sign In User
     ///
@@ -27,14 +47,18 @@ class LoginViewModel {
         }
     }
     
-    /// Validate the form elements
+    /// Reset Password
     ///
-    
-    var formIsValid: Bool {
-        return !email.isEmpty
-        && email.contains("@")
-        && !password.isEmpty
-        && password.count > 5
+    func resetPassword() {
+        Task {
+            do {
+                guard emailIsValid else { return }
+                try await AuthService.shared.resetPassword(withEmail: resetPasswordEmail)
+                showResetPasswordSheet = false
+            } catch {
+                print("DEBUG: Error login user: \(error.localizedDescription)")
+            }
+        }
     }
     
     

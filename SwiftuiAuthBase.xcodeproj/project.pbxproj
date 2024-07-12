@@ -29,6 +29,9 @@
 		EF03BF3E2C40364300CC4487 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF03BF3D2C40364300CC4487 /* AuthService.swift */; };
 		EF03BF402C40367A00CC4487 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF03BF3F2C40367A00CC4487 /* LoginViewModel.swift */; };
 		EF03BF422C40384600CC4487 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF03BF412C40384600CC4487 /* RegistrationViewModel.swift */; };
+		EF346BA52C412CC3000F8940 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF346BA42C412CC3000F8940 /* ResetPasswordView.swift */; };
+		EFEDFDCD2C40F3850067AE5D /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEDFDCC2C40F3850067AE5D /* ProfileViewModel.swift */; };
+		EFEDFDD12C40F9F00067AE5D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEDFDD02C40F9F00067AE5D /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +51,9 @@
 		EF03BF3D2C40364300CC4487 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		EF03BF3F2C40367A00CC4487 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		EF03BF412C40384600CC4487 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		EF346BA42C412CC3000F8940 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
+		EFEDFDCC2C40F3850067AE5D /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		EFEDFDD02C40F9F00067AE5D /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				EF02826A2C3EFC8000B5FB4F /* User.swift */,
+				EFEDFDD02C40F9F00067AE5D /* Item.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -137,6 +144,7 @@
 			children = (
 				EF0282592C3EE85500B5FB4F /* Root */,
 				EF02825E2C3EE91100B5FB4F /* Authentication */,
+				EFEDFDC82C40ED2E0067AE5D /* Items */,
 				EF02825F2C3EE92200B5FB4F /* Profile */,
 			);
 			path = Core;
@@ -163,7 +171,9 @@
 		EF02825F2C3EE92200B5FB4F /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				EF0282662C3EF5A100B5FB4F /* ProfileView.swift */,
+				EFEDFDC92C40ED530067AE5D /* Views */,
+				EFEDFDCA2C40ED5D0067AE5D /* ViewModels */,
+				EFEDFDCB2C40ED6D0067AE5D /* Service */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -182,6 +192,7 @@
 			children = (
 				EF0282602C3EE96500B5FB4F /* LoginView.swift */,
 				EF0282642C3EF12100B5FB4F /* RegistrationView.swift */,
+				EF346BA42C412CC3000F8940 /* ResetPasswordView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -192,6 +203,60 @@
 				EF03BF3D2C40364300CC4487 /* AuthService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		EFEDFDC82C40ED2E0067AE5D /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				EFEDFDD42C40FA740067AE5D /* Views */,
+				EFEDFDD32C40FA710067AE5D /* ViewModels */,
+				EFEDFDD22C40FA6E0067AE5D /* Service */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
+		EFEDFDC92C40ED530067AE5D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EF0282662C3EF5A100B5FB4F /* ProfileView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EFEDFDCA2C40ED5D0067AE5D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				EFEDFDCC2C40F3850067AE5D /* ProfileViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		EFEDFDCB2C40ED6D0067AE5D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		EFEDFDD22C40FA6E0067AE5D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		EFEDFDD32C40FA710067AE5D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		EFEDFDD42C40FA740067AE5D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,6 +349,9 @@
 				EF03BF402C40367A00CC4487 /* LoginViewModel.swift in Sources */,
 				EF02824E2C3EE7DA00B5FB4F /* ContentView.swift in Sources */,
 				EF02824C2C3EE7DA00B5FB4F /* SwiftuiAuthBaseApp.swift in Sources */,
+				EFEDFDCD2C40F3850067AE5D /* ProfileViewModel.swift in Sources */,
+				EFEDFDD12C40F9F00067AE5D /* Item.swift in Sources */,
+				EF346BA52C412CC3000F8940 /* ResetPasswordView.swift in Sources */,
 				EF02826B2C3EFC8000B5FB4F /* User.swift in Sources */,
 				EF0282672C3EF5A100B5FB4F /* ProfileView.swift in Sources */,
 				EF0282652C3EF12100B5FB4F /* RegistrationView.swift in Sources */,

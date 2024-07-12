@@ -21,9 +21,11 @@ final class AuthService {
     /// Not Accessible from outstide because of the singleton pattern used here
     
     private init() {
-        self.userSession = Auth.auth().currentUser
-        Task {
-            await fetchUser()
+        userSession = Auth.auth().currentUser
+        if userSession != nil {
+            Task {
+                await fetchUser()
+            }
         }
     }
     
@@ -58,7 +60,8 @@ final class AuthService {
             self.userSession = result.user
             let user = User(id: result.user.uid,
                             fullName: fullName,
-                            email: email)
+                            email: email,
+                            profilePicture: "")
             let encodedUser = try Firestore.Encoder().encode(user)
             try await Firestore.firestore().collection("users").document(user.id).setData(encodedUser)
             await fetchUser()
@@ -107,8 +110,14 @@ final class AuthService {
     /// Forgot Password
     ///
     
-    func forgotPassword() async {
-        print("DEBUG: Forgot password ...")
+    func resetPassword(withEmail email: String) async throws {
+        print("DEBUG: Reset password ...")
+        do {
+            try await Auth.auth().sendPasswordReset(withEmail: email)
+        } catch {
+            print("ERROR: failed to login the user with error: \(error.localizedDescription)")
+        }
+        
     }
     
     /// Change Password

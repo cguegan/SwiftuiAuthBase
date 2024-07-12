@@ -93,7 +93,7 @@ extension RegistrationView {
             viewModel.createUser()
         } label: {
             HStack {
-                Text("SIGN UP").fontWeight(.semibold)
+                Text("Sign Up").fontWeight(.semibold)
                 Image(systemName: "arrow.right")
             }.foregroundColor(.white)
                 .frame( width: UIScreen.main.bounds.width - 32,

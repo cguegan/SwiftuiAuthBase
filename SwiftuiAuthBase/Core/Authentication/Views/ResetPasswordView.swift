@@ -22,7 +22,7 @@ struct ResetPasswordView: View {
                 .padding(.bottom, 40)
             
             // Email
-            ImputView( text: $viewModel.forgotPassword,
+            ImputView( text: $viewModel.resetPasswordEmail,
                        title: "please enter you email Address",
                        placeholder: "name@example.com"
             )
