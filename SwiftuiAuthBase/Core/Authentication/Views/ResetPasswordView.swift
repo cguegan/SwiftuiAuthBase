@@ -48,7 +48,7 @@ struct ResetPasswordView: View {
                         height: 48)
             }
             .background(Color(.systemBlue))
-            .disabled(!viewModel.emailIsValid)
+            .disabled(!viewModel.isValidEmail)
             .cornerRadius(10)
             .padding(.top, 24)
             

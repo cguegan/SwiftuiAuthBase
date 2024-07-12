@@ -23,14 +23,14 @@ class LoginViewModel {
         && email.contains("@")
         && !password.isEmpty
         && password.count > 5
+        && email.isValidEmail()
     }
     
     /// Validate the form elements
     ///
     
-    var emailIsValid: Bool {
-        //TODO: Check if email is valid
-        return true
+    var isValidEmail: Bool {
+        email.isValidEmail()
     }
     
     /// Sign In User
@@ -52,7 +52,7 @@ class LoginViewModel {
     func resetPassword() {
         Task {
             do {
-                guard emailIsValid else { return }
+                guard isValidEmail else { return }
                 try await AuthService.shared.resetPassword(withEmail: resetPasswordEmail)
                 showResetPasswordSheet = false
             } catch {
@@ -60,7 +60,6 @@ class LoginViewModel {
             }
         }
     }
-    
-    
+
 
 }
